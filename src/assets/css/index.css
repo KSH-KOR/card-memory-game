@@ -1,0 +1,127 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  #root {
+    height: 100vh;
+    display: flex;
+    background: #130f40;
+  }
+
+  .board {
+    display: flex;
+    width: 100%;
+  }
+  
+  .memory-game {
+    width: 60%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+  }
+  
+  .memory-card {
+    width: calc(20% - 10px);
+    height: calc(20% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+  
+  .memory-card:active {
+    transform: scale(0.97);
+    transition: transform 0.2s;
+  }
+  
+  .memory-card.flip {
+    transform: rotateY(180deg);
+  }
+  
+  .front-face,
+  .back-face {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background: #30336b;
+    backface-visibility: hidden;
+  }
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ecf0f1; /* Light grey color for the number */
+    font-size: 48px; /* Large font size for visibility */
+    font-weight: bold; /* Bold font for emphasis */
+    font-family: 'Arial', sans-serif; /* Modern, readable font */
+  }
+  
+  .front-face {
+    transform: rotateY(180deg);
+  }
+
+  /* TeamSidebar.cs
+  s */
+.team-sidebar {
+    flex: 0 0 250px;
+    background-color: #2c3e50; /* Match the game board's background color */
+    color: #fff; /* White text color for better readability */
+    padding: 20px;
+    box-sizing: 'border-box';
+    height: 100vh; /* Full height */
+    overflow-y: auto; /* Scrollable if the content is too long */
+    left: 0; /* Stick to the left side of the screen */
+    top: 0; /* Align to the top */
+  }
+  
+  .team-sidebar-header {
+    margin-top: 0;
+    border-bottom: '1px solid #7f8c8d'; /* Slightly lighter border color */
+    padding-bottom: 10px;
+    font-size: 24px; /* Larger font size for header */
+  }
+  
+  .team-sidebar-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .team-sidebar-item {
+    background-color: #34495e; /* Slightly lighter than the sidebar for contrast */
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+  .team-sidebar-item.active {
+    background-color: #3498db; /* or any color that signifies an active team */
+    color: #fff;
+  }
+  
+  .team-sidebar-item:hover {
+    background-color: #3e556e; /* Hover effect */
+  }
+  
+  .team-name {
+    font-weight: bold;
+  }
+  
+  .team-score {
+    font-style: italic;
+  }
+  
+  
